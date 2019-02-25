@@ -1,0 +1,2 @@
+Main-Class: com.tsystems.oop.dbutil.DbUtil
+Class-Path: lib\h2-1.4.197.jar

@@ -69,7 +69,6 @@ public class DbUtil
       ResultSet rs=selectPreparedStatement.executeQuery();
       while (rs.next())
       {
-        //        System.out.println("Id " + rs.getInt("id") + " Name " + rs.getString("name"));
         Map<String, String> line=new TreeMap<>();
         line.put("id", String.valueOf(rs.getInt("id")));
         line.put("name", rs.getString("name"));
@@ -77,6 +76,8 @@ public class DbUtil
         line.put("phone", rs.getString("phone"));
         line.put("debt", rs.getString("debt"));
         line.put("email", rs.getString("email"));
+        line.put("loandate", rs.getString("loandate"));
+        line.put("prio", rs.getString("prio"));
         data.add(line);
       }
       selectPreparedStatement.close();
@@ -96,7 +97,6 @@ public class DbUtil
     try
     {
       Statement stmt=con.createStatement();
-      //      stmt.executeQuery("DELETE FROM DEBTORS WHERE id = "+id+";");
       stmt.executeUpdate("DELETE FROM DEBTORS WHERE id = " + id + ";");
       con.commit();
     }

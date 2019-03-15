@@ -4,7 +4,7 @@ import java.util.Scanner;
 
 public class ConsoleUi
 {
-  Scanner sc;
+  private Scanner sc;
 
   public ConsoleUi()
   {
@@ -64,7 +64,7 @@ public class ConsoleUi
     }
     catch (CommandParseException e)
     {
-      e.printStackTrace();
+      System.err.println("Error: " + e.getMessage());
     }
 
     return command;
